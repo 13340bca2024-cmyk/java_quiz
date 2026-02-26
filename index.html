@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Java Programming Quiz Application</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f2f2f2;
+    padding:20px;
+}
+.container{
+    background:#fff;
+    width:80%;
+    margin:auto;
+    padding:25px;
+    border-radius:8px;
+}
+h1,h2{
+    text-align:center;
+}
+input, textarea, button{
+    width:100%;
+    padding:8px;
+    margin:6px 0;
+}
+.question{
+    margin-bottom:15px;
+}
+button{
+    background:#3498db;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+button:hover{
+    background:#1d6fa5;
+}
+#quizSection{ display:none; }
+#result{ font-weight:bold; color:green; }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Java Programming Quiz Application</h1>
+
+<!-- PARTICIPANT DETAILS -->
+<div id="userForm">
+<h2>Participant Details</h2>
+<input type="text" id="name" placeholder="Enter Name">
+<input type="email" id="email" placeholder="Enter Email">
+<input type="text" id="class" placeholder="Enter Class">
+<button onclick="startQuiz()">Start Quiz</button>
+</div>
+
+<!-- QUIZ SECTION -->
+<div id="quizSection">
+
+<h2>Section A: Theory Questions (MCQ)</h2>
+
+<!-- 15 THEORY QUESTIONS -->
+<div class="question">
+<p>1. Which keyword is used to create an object in Java?</p>
+<input type="radio" name="q1" value="new"> new<br>
+<input type="radio" name="q1" value="class"> class<br>
+<input type="radio" name="q1" value="void"> void<br>
+<input type="radio" name="q1" value="static"> static
+</div>
+
+<div class="question">
+<p>2. Entry point of Java program?</p>
+<input type="radio" name="q2" value="main"> main()<br>
+<input type="radio" name="q2" value="run"> run()<br>
+<input type="radio" name="q2" value="start"> start()<br>
+<input type="radio" name="q2" value="init"> init()
+</div>
+
+<div class="question">
+<p>3. Which datatype stores decimal values?</p>
+<input type="radio" name="q3" value="int"> int<br>
+<input type="radio" name="q3" value="float"> float<br>
+<input type="radio" name="q3" value="char"> char<br>
+<input type="radio" name="q3" value="boolean"> boolean
+</div>
+
+<div class="question">
+<p>4. Which keyword is used for inheritance?</p>
+<input type="radio" name="q4" value="extends"> extends<br>
+<input type="radio" name="q4" value="implements"> implements<br>
+<input type="radio" name="q4" value="inherit"> inherit<br>
+<input type="radio" name="q4" value="super"> super
+</div>
+
+<div class="question">
+<p>5. Which loop is entry-controlled?</p>
+<input type="radio" name="q5" value="for"> for<br>
+<input type="radio" name="q5" value="while"> while<br>
+<input type="radio" name="q5" value="do"> do-while<br>
+<input type="radio" name="q5" value="none"> none
+</div>
+
+<div class="question">
+<p>6. Which keyword is used to inherit interface?</p>
+<input type="radio" name="q6" value="extends"> extends<br>
+<input type="radio" name="q6" value="implements"> implements<br>
+<input type="radio" name="q6" value="interface"> interface<br>
+<input type="radio" name="q6" value="super"> super
+</div>
+
+<div class="question">
+<p>7. Size of int in Java?</p>
+<input type="radio" name="q7" value="2"> 2 bytes<br>
+<input type="radio" name="q7" value="4"> 4 bytes<br>
+<input type="radio" name="q7" value="8"> 8 bytes<br>
+<input type="radio" name="q7" value="depends"> Depends
+</div>
+
+<div class="question">
+<p>8. Which is not OOPS concept?</p>
+<input type="radio" name="q8" value="inheritance"> Inheritance<br>
+<input type="radio" name="q8" value="polymorphism"> Polymorphism<br>
+<input type="radio" name="q8" value="compilation"> Compilation<br>
+<input type="radio" name="q8" value="encapsulation"> Encapsulation
+</div>
+
+<div class="question">
+<p>9. Which symbol is used for single-line comment?</p>
+<input type="radio" name="q9" value="//"> //<br>
+<input type="radio" name="q9" value="/*"> /*<br>
+<input type="radio" name="q9" value="#"> #<br>
+<input type="radio" name="q9" value="--"> --
+</div>
+
+<div class="question">
+<p>10. Which package is automatically imported?</p>
+<input type="radio" name="q10" value="java.util"> java.util<br>
+<input type="radio" name="q10" value="java.io"> java.io<br>
+<input type="radio" name="q10" value="java.lang"> java.lang<br>
+<input type="radio" name="q10" value="java.sql"> java.sql
+</div>
+
+<div class="question">
+<p>11. Which keyword prevents inheritance?</p>
+<input type="radio" name="q11" value="final"> final<br>
+<input type="radio" name="q11" value="static"> static<br>
+<input type="radio" name="q11" value="private"> private<br>
+<input type="radio" name="q11" value="protected"> protected
+</div>
+
+<div class="question">
+<p>12. Which exception occurs when array index is invalid?</p>
+<input type="radio" name="q12" value="IOException"> IOException<br>
+<input type="radio" name="q12" value="NullPointerException"> NullPointerException<br>
+<input type="radio" name="q12" value="ArrayIndexOutOfBoundsException"> ArrayIndexOutOfBoundsException<br>
+<input type="radio" name="q12" value="ArithmeticException"> ArithmeticException
+</div>
+
+<div class="question">
+<p>13. Which keyword is used to stop loop?</p>
+<input type="radio" name="q13" value="break"> break<br>
+<input type="radio" name="q13" value="stop"> stop<br>
+<input type="radio" name="q13" value="exit"> exit<br>
+<input type="radio" name="q13" value="return"> return
+</div>
+
+<div class="question">
+<p>14. JVM stands for?</p>
+<input type="radio" name="q14" value="Java Virtual Machine"> Java Virtual Machine<br>
+<input type="radio" name="q14" value="Java Variable Method"> Java Variable Method<br>
+<input type="radio" name="q14" value="Java Verified Machine"> Java Verified Machine<br>
+<input type="radio" name="q14" value="None"> None
+</div>
+
+<div class="question">
+<p>15. Which keyword is used to handle exceptions?</p>
+<input type="radio" name="q15" value="try"> try<br>
+<input type="radio" name="q15" value="catch"> catch<br>
+<input type="radio" name="q15" value="finally"> finally<br>
+<input type="radio" name="q15" value="all"> All of the above
+</div>
+
+<h2>Section B: Coding Questions</h2>
+
+<p>16. Write a Java program to print "Hello World".</p>
+<textarea></textarea>
+
+<p>17. Write a Java program to find sum of two numbers.</p>
+<textarea></textarea>
+
+<p>18. Write a Java program to check even or odd.</p>
+<textarea></textarea>
+
+<p>19. Write a Java program to find factorial.</p>
+<textarea></textarea>
+
+<p>20. Write a Java program to reverse a number.</p>
+<textarea></textarea>
+
+<button onclick="submitQuiz()">Submit Quiz</button>
+
+<p id="result"></p>
+
+</div>
+</div>
+
+<script>
+function startQuiz(){
+    if(
+        document.getElementById("name").value=="" ||
+        document.getElementById("email").value=="" ||
+        document.getElementById("class").value==""
+    ){
+        alert("Please fill all details");
+        return;
+    }
+    document.getElementById("userForm").style.display="none";
+    document.getElementById("quizSection").style.display="block";
+}
+
+function submitQuiz(){
+    let score=0;
+    const answers={
+        q1:"new",q2:"main",q3:"float",q4:"extends",q5:"for",
+        q6:"implements",q7:"4",q8:"compilation",q9:"//",
+        q10:"java.lang",q11:"final",q12:"ArrayIndexOutOfBoundsException",
+        q13:"break",q14:"Java Virtual Machine",q15:"all"
+    };
+
+    for(let i=1;i<=15;i++){
+        let q=document.querySelector(`input[name="q${i}"]:checked`);
+        if(q && q.value===answers["q"+i]) score++;
+    }
+
+    document.getElementById("result").innerHTML=
+    "Thank you <b>"+document.getElementById("name").value+
+    "</b><br>MCQ Score: "+score+" / 15<br>Coding Questions: Submitted";
+}
+</script>
+
+</body>
+</html>
